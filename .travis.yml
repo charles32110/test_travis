@@ -15,7 +15,7 @@ matrix:
         - tar -xvf clang*.tar
         - export LLVM_DIR=$PWD/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04
     - os: osx
-      osx_image: xcode7.2
+      osx_image: xcode11.5
       install:
         - wget https://github.com/charles32110/SVF-Static-Lib/releases/download/V1.0.1/V1.0.1.tar.gz
         - tar -xzvf V1.0.1.tar.gz
@@ -28,4 +28,6 @@ before_script:
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get update       ; fi
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get install cmake gcc g++; fi
 
-script: cmake -DSVF_DIR=$SVF && make
+script:
+  - cmake -DSVF_DIR=$SVF
+  - make
