@@ -8,11 +8,20 @@ matrix:
       sudo: required
       install:
         - wget https://github.com/charles32110/SVF-Static-Lib/releases/download/V1.0.1/V1.0.1.tar.gz
-        - tar -xzxf V1.0.1.tar.gz
-        - ls
+        - tar -xzvf V1.0.1.tar.gz
+        - export SVF_DIR=/home/travis/build/charles32110/test_travis/SVF-Static-Lib
+        - wget https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz
+        - tar -xzvf clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz
+        - export LLVM_DIR=clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04
     - os: osx
       osx_image: xcode7.2
-
+      install:
+        - wget https://github.com/charles32110/SVF-Static-Lib/releases/download/V1.0.1/V1.0.1.tar.gz
+        - tar -xzvf V1.0.1.tar.gz
+        - export SVF_DIR=/home/travis/build/charles32110/test_travis/SVF-Static-Lib
+        - wget https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/clang+llvm-10.0.0-x86_64-apple-darwin.tar.xz
+        - tar -zxvf clang+llvm-10.0.0-x86_64-apple-darwin.tar.xz
+        - export LLVM_DIR=/home/travis/build/charles32110/test_travis/clang+llvm-10.0.0-x86_64-apple-darwin
 
 before_script:
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get update       ; fi
