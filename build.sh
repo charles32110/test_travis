@@ -1,3 +1,4 @@
 # !bash
 
-echo $LLVM_DIR
+ls
+pwd
