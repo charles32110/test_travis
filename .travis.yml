@@ -22,7 +22,8 @@ matrix:
         - export SVF_DIR=/home/travis/build/charles32110/test_travis/SVF-Static-Lib
         - wget https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/clang+llvm-10.0.0-x86_64-apple-darwin.tar.xz
         - tar -xzvf clang+llvm-10.0.0-x86_64-apple-darwin.tar.xz
-        - export LLVM_DIR=$pwd/"clang+llvm-10.0.0-x86_64-apple-darwin"
+        - export PATHV=$pwd
+        - export LLVM_DIR=$PATHV/"clang+llvm-10.0.0-x86_64-apple-darwin"
 
 before_script:
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get update       ; fi
