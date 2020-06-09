@@ -9,7 +9,7 @@ matrix:
       install:
         - wget https://github.com/charles32110/SVF-Static-Lib/releases/download/V1.0.1/V1.0.1.tar.gz
         - tar -xzvf V1.0.1.tar.gz
-        - export SVF=$PWD/test_travis/SVF-Static-Lib
+        - export SVF=$PWD/SVF-Static-Lib
         - wget https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz
         - xz -d clang*.tar.xz
         - tar -xvf clang*.tar
