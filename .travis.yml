@@ -13,7 +13,7 @@ matrix:
         - wget https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz
         - xz -d clang*.tar.xz
         - tar -xvf clang*.tar
-        - export LLVM_DIR=$pwd/"clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04"
+        - export LLVM_DIR=$PWD/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04
     - os: osx
       osx_image: xcode7.2
       install:
@@ -22,8 +22,7 @@ matrix:
         - export SVF_DIR=/home/travis/build/charles32110/test_travis/SVF-Static-Lib
         - wget https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/clang+llvm-10.0.0-x86_64-apple-darwin.tar.xz
         - tar -xzvf clang+llvm-10.0.0-x86_64-apple-darwin.tar.xz
-        - export PATHV=$pwd
-        - export LLVM_DIR=$PATHV/"clang+llvm-10.0.0-x86_64-apple-darwin"
+        - export LLVM_DIR=$PWD/clang+llvm-10.0.0-x86_64-apple-darwin
 
 before_script:
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get update       ; fi
